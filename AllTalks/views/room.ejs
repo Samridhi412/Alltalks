@@ -45,7 +45,7 @@
        <div class="main__left">
            <div class="main__head">
             <div class="main__controls__block main__controls">
-                <div class="main__controls__button" onclick="">
+                <div class="main__controls__button" onclick="invitebox()">
                     <i class="fas fa-user-plus"></i>
                     <span>Invite</span>
                 </div>
@@ -68,48 +68,7 @@
                 <span>Gesture mode</span>
             </div>
             </div>
-            </div>
-              <!--
-            <div class="main__controls">
-                  
-                <div class="main__controls__block">
-                    
-                    <div onclick="" class="main__controls__button main__mute_button">
-                        <i class="fas fa-microphone"></i>
-                        <span>Mute</span>
-                    </div>
-                    <div onclick="" class="main__controls__button main__video_button">
-                        <i class="fas fa-video"></i>
-                        <span>Stop video</span>
-                    </div>
-                    
-                    <div class="main__controls__button" onclick="">
-                        <i class="fas fa-user-plus"></i>
-                        <span>Invite</span>
-                    </div>
-                    
-                </div>
-                
-                <div class="main__controls__block">
-                    <div onclick=")" class="main__controls__button">
-                        <i class="fas fa-closed-captioning"></i>
-                        <span> SubTitles</span>
-                    </div>
-                    <div class="main__controls__button">
-                        <i class="fa fa-hands-asl-interpreting"></i>
-                        <span>Gesture mode</span>
-                    </div>
-                    
-                </div>
-                
-                <div class="main__controls__block">
-                    <div class="main__controls__button ">
-                        <span class="leave_meeting">Leave meeting</span>
-                    </div>
-                </div>
-                
-            </div>
-        -->
+            </div>   
        </div>
        <div class="main__right">
             <div class="main__header">
@@ -124,11 +83,11 @@
                 <input id="chat_message" type="text"  placeholder="Type message here..."/>
             </div>
             <div class="main__message__block">
-                <div onclick="" class="main__controls__button main__mute_button">
+                <div onclick="muteUnmute()" class="main__controls__button main__mute_button">
                     <i class="fas fa-microphone"></i>
                     <span>Mute</span>
                 </div>
-                <div onclick="" class="main__controls__button main__video_button">
+                <div onclick="playStop()" class="main__controls__button main__video_button">
                     <i class="fas fa-video"></i>
                     <span>Stop video</span>
                 </div>
