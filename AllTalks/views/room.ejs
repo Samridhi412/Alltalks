@@ -24,6 +24,22 @@
     
 </head>
 <body>
+<div class="modal fade" id="getCodeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Invite People</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="roomId"><strong> <%= roomId %></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" onclick="cancel()">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="copy()">Copy</button>
+                </div>
+            </div>
+        </div>
+    </div>
    <!--this is the class where our zoom clone lives -->
    <div class="main">
        <div class="main__left">
