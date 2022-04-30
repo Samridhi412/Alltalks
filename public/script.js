@@ -29,11 +29,19 @@ navigator.mediaDevices.getUserMedia({
     socket.on('user-connected',(userId) => {
         connecToNewUser(userId, stream);
     })
-   
-    
+   /*chat-box */
+    let text = $('input');
 
-    
- 
+    $('html').keydown((e) =>{
+      if(e.which == 13 && text.val().length !== 0){
+          socket.emit('message', text.val());
+          text.val('')
+      }
+    });
+    socket.on('createMessage', message => {
+        $('.messages').append(`<li class="message"><b>user</b><br/>${message}</li>`);
+        scrollToBottom()
+      });
 
 })
 
@@ -42,10 +50,6 @@ peer.on('open', id =>{
    socket.emit('join-room',ROOM_ID,id);
 })
 
-
-/* hey I have joined the room
-socket.emit('join-room',ROOM_ID);
-*/
 const connecToNewUser = (userId, stream) => {
     const call = peer.call(userId, stream)
     const video = document.createElement('video')
@@ -66,9 +70,12 @@ const addVideoStream=(video,stream) => {
     videoGrid.append(video);
 }
 
-
-
-
+/*for scrolling the chat */
+  const scrollToBottom = () =>{
+      let d = $('.main__chat_window');
+      d.scrollTop(d.prop("scrollHeight"));
+  }
+  
   /*mute the video */
   const muteUnmute = () => {
       const enabled = myVideoStream.getAudioTracks()[0].enabled;
@@ -120,3 +127,16 @@ const addVideoStream=(video,stream) => {
    <span>Play Video</span>`
    document.querySelector('.main__video_button').innerHTML =html;
   }
+  
+   /*invite */
+        const cancel = () => { // Hide our invite modal when we click cancel
+            $("#getCodeModal").modal("hide");
+        };
+        
+        const copy = async() => { // copy our Invitation link when we press the copy button
+            const roomid = document.getElementById("roomId").innerText;
+            await navigator.clipboard.writeText("http://localhost:8080/" + roomid);
+        };
+        const invitebox = () => { // Show our model when we click
+            $("#getCodeModal").modal("show");
+        };
