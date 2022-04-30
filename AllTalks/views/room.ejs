@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AllTalks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <script src="/socket.io/socket.io.js" ></script>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    
+    <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        const ROOM_ID="<%= roomId  %>";
+    </script>    
+    
+</head>
+<body>
+   <!--this is the class where our zoom clone lives -->
+   <div class="main">
+       <div class="main__left">
+           <div class="main__head">
+            <div class="main__controls__block main__controls">
+                <div class="main__controls__button" onclick="">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Invite</span>
+                </div>
+            </div>
+           </div>
+            <div class="main__videos">
+                <div id="video-grid">
+                </div>
+            </div>
+            <div class="main__result">
+            <div id="result" class="res">
+            </div>
+            <div class="res">
+            <div onclick="" class="main__control__button">
+                <i class="fas fa-closed-captioning"></i>
+                <span> SubTitles</span>
+            </div>
+            <div id="g" class="main__control__button">
+                <i class="fa fa-hands-asl-interpreting"></i>
+                <span>Gesture mode</span>
+            </div>
+            </div>
+            </div>
+              <!--
+            <div class="main__controls">
+                  
+                <div class="main__controls__block">
+                    
+                    <div onclick="" class="main__controls__button main__mute_button">
+                        <i class="fas fa-microphone"></i>
+                        <span>Mute</span>
+                    </div>
+                    <div onclick="" class="main__controls__button main__video_button">
+                        <i class="fas fa-video"></i>
+                        <span>Stop video</span>
+                    </div>
+                    
+                    <div class="main__controls__button" onclick="">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Invite</span>
+                    </div>
+                    
+                </div>
+                
+                <div class="main__controls__block">
+                    <div onclick=")" class="main__controls__button">
+                        <i class="fas fa-closed-captioning"></i>
+                        <span> SubTitles</span>
+                    </div>
+                    <div class="main__controls__button">
+                        <i class="fa fa-hands-asl-interpreting"></i>
+                        <span>Gesture mode</span>
+                    </div>
+                    
+                </div>
+                
+                <div class="main__controls__block">
+                    <div class="main__controls__button ">
+                        <span class="leave_meeting">Leave meeting</span>
+                    </div>
+                </div>
+                
+            </div>
+        -->
+       </div>
+       <div class="main__right">
+            <div class="main__header">
+                <h5>Chat Area</h5>
+            </div>
+            <div class="main__chat_window" id="main__chat_window">
+                <ul class="messages">
+
+                </ul>
+            </div>
+            <div class="main__message_container">
+                <input id="chat_message" type="text"  placeholder="Type message here..."/>
+            </div>
+            <div class="main__message__block">
+                <div onclick="" class="main__controls__button main__mute_button">
+                    <i class="fas fa-microphone"></i>
+                    <span>Mute</span>
+                </div>
+                <div onclick="" class="main__controls__button main__video_button">
+                    <i class="fas fa-video"></i>
+                    <span>Stop video</span>
+                </div>
+                <div  class="main__controls__button">
+                    <i style="color:red;" class="fa-solid fa-phone-slash"></i>
+                    <span style="color:red;"> End Call</span>
+                </div>
+            </div>
+       </div>
+   </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
