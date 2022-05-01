@@ -16,4 +16,5 @@ pip install mediapipe
 
 pip install flask
 
-
+## TO GET A QUICK UNDERSTANDING OF OUR PROJECT allTalks,refer the below link:
+https://drive.google.com/file/d/17-pb87hXNM-XegUjja6cQsfDDjVApSSj/view?usp=drivesdk
