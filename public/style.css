@@ -113,4 +113,37 @@ video{
 .unmute, .stop, .pause{
     color:#CC3B33;
 }
+.res{
+    display: flex;
+    padding: 8px 10px;
+    min-width: 80px;
+    cursor: pointer;
+    color: #D2D2D2;    
+    height: 75px;
+    
+    box-shadow: 0 0 1px 0 #bbb;
+}
+.main__control__button{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    min-width: 80px;
+    cursor: pointer;
+}
+.main__control__button i{
+    font-size:24px;
+}
+.main__control__button:hover{
+    background-color: #343434;
+    border-radius: 5px;
+}
+#result{
+    height: 75px;
+    
+    box-shadow: 0 0 0px 0 #bbb;
+    font-size: 20px;
+    line-height: 25px;
+}
 
